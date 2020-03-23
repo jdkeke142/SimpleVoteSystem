@@ -38,13 +38,13 @@ There are 3 particular values:
 You need to add a class in the websites package that extends from the AbstractHasVoted abstract class, it contains the following abstract methods:
 
 ```java 
-public abstract int hasVoted(ProxiedPlayer player);
+public abstract int hasVoted(ProxiedPlayer player); //The player has voted? If yes, then returns the time in seconds before the next vote, if not, returns -1
 
-public abstract String getWebsiteName();
+public abstract String getWebsiteName(); //The name of the site as it should be in the configuration, and in the database
 
-public abstract String getUserFriendlyName();
+public abstract String getUserFriendlyName(); //The name as it will appear in the configuration's placeholders, and in the voting command
 
-public abstract String getUrl(String serverId, String playerIp);
+public abstract String getUrl(String serverId, String playerIp); //The Voting API link, which will be formatted with the player IP and the server ID or token on your voting site.
 ```
 
 The important thing to remember that you have to implement is the hasVoted abstract method, it's really simple, it should typically look like this if your API is ideal for the system:
