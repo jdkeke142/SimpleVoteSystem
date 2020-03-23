@@ -63,13 +63,28 @@ Now maybe you are wondering what is the `useCleaner` key in configuration, it al
 You need to add a class in the websites package that extends from the AbstractHasVoted abstract class, it contains the following abstract methods which you will have to implement:
 
 ```java 
-public abstract int hasVoted(ProxiedPlayer player); //The player has voted? If yes, then returns the time in seconds before the next vote, if not, returns -1
+    /**
+     * @param player The player whose IP we want to check on the voting website
+     * @return The time before the next vote in seconds if a vote is detected, or -1 if no vote is detected.
+     */
+    public abstract int hasVoted(ProxiedPlayer player);
 
-public abstract String getWebsiteName(); //The name of the site as it should be in the configuration, and in the database
+    /**
+     * @return The website name as it should be in the configuration and database.
+     */
+    public abstract String getWebsiteName();
 
-public abstract String getUserFriendlyName(); //The name as it will appear in the configuration's placeholders, and in the voting command
+    /**
+     * @return The website name as it should be displayed in the voting comand, and the websiteName placeholder
+     */
+    public abstract String getUserFriendlyName();
 
-public abstract String getUrl(String serverId, String playerIp); //The Voting API link, which will be formatted with the player IP and the server ID or token on your voting site.
+    /**
+     * @param serverId The ID or the token of the server on the voting website
+     * @param playerIp The IP address we want to verify
+     * @return
+     */
+    public abstract String getUrl(String serverId, String playerIp);
 ```
 
 The important thing to remember that you have to implement is the hasVoted abstract method, it's really simple, it should typically look like this if your API is ideal for the system:
