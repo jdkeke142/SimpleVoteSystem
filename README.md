@@ -35,3 +35,10 @@ There are 3 particular values:
 ##### Then you are good to go.
 
 ## As a vote website owner, how can I add my website?
+You need to add a class in the websites package that extends from the AbstractHasVoted abstract class.
+
+The important thing to remember that you have to implement is the hasVoted abstract method, it's simple: 
+
+If the IP in question has already voted on your website, you have to return the time in seconds left before the next vote.
+
+If you don't detect any vote on that IP, then return -1.
