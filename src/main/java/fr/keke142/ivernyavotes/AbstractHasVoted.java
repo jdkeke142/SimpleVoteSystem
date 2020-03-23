@@ -70,12 +70,7 @@ public abstract class AbstractHasVoted {
                 votesManager.saveVote(getWebsiteName(), player, hasVoted);
 
                 votesManager.confirmVote(player, getUserFriendlyName());
-                // IvernyaVotesPlugin.getInstance().getProxy().broadcast(TextComponent.fromLegacyText("GIVING REWARD TO " + player.getName() + " FROM " + getWebsiteName()));
-            } else {
-                // IvernyaVotesPlugin.getInstance().getProxy().broadcast(TextComponent.fromLegacyText(player.getName() + " HAVEN'T VOTED FOR " + getWebsiteName() + ", CANCELLING"));
             }
-        } else {
-            // IvernyaVotesPlugin.getInstance().getProxy().broadcast(TextComponent.fromLegacyText(player.getName() + " CHECKED IN DATABASE FOR " + getWebsiteName() + ", CANCELLING"));
         }
     }
 
@@ -95,11 +90,26 @@ public abstract class AbstractHasVoted {
         return config;
     }
 
+    /**
+     * @param player The player whose IP we want to check on the voting website
+     * @return The time before the next vote in seconds if a vote is detected, or -1 if no vote is detected.
+     */
     public abstract int hasVoted(ProxiedPlayer player);
 
+    /**
+     * @return The website name as it should be in the configuration and database.
+     */
     public abstract String getWebsiteName();
 
+    /**
+     * @return The website name as it should be displayed in the voting comand, and the websiteName placeholder
+     */
     public abstract String getUserFriendlyName();
 
+    /**
+     * @param serverId The ID or the token of the server on the voting website
+     * @param playerIp The IP address we want to verify
+     * @return
+     */
     public abstract String getUrl(String serverId, String playerIp);
 }
