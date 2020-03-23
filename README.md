@@ -33,3 +33,5 @@ There are 3 particular values:
 - `serverId`: This value is very important, it's the ID of your server, or the vote token depending on the voting site, which will allow the plugin to detect the vote with the API of the voting website.
 
 ##### Then you are good to go.
+
+## As a vote website owner, how can I add my website?
