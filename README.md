@@ -35,7 +35,7 @@ There are 3 particular values:
 ##### Then you are good to go.
 
 ## As a vote website owner, how can I add my website?
-You need to add a class in the websites package that extends from the AbstractHasVoted abstract class, it contains the following abstract methods:
+You need to add a class in the websites package that extends from the AbstractHasVoted abstract class, it contains the following abstract methods which you will have to implement:
 
 ```java 
 public abstract int hasVoted(ProxiedPlayer player); //The player has voted? If yes, then returns the time in seconds before the next vote, if not, returns -1
