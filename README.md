@@ -31,3 +31,5 @@ There are 3 particular values:
 - `enabled`: this allows you to enable or disable one of the voting sites supported by the plugin.
 - `votePage`: This is absolutely visual, it is the voting link that your players will find when they drag the mouse over the name of the voting site in the voting command.
 - `serverId`: This value is very important, it's the ID of your server, or the vote token depending on the voting site, which will allow the plugin to detect the vote with the API of the voting website.
+
+#####Then you are good to go.
