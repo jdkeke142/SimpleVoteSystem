@@ -37,7 +37,20 @@ There are 3 particular values:
 ## As a vote website owner, how can I add my website?
 You need to add a class in the websites package that extends from the AbstractHasVoted abstract class.
 
-The important thing to remember that you have to implement is the hasVoted abstract method, it's simple: 
+The important thing to remember that you have to implement is the hasVoted abstract method, it's really simple, it should typically look like this if your API is ideal for the system:
+
+```java
+    @Override
+    public int hasVoted(ProxiedPlayer player) {
+        JSONObject result = ReadersUtil.readJsonFromUrl(getUrl(getServerIdForWebsite(), player.getAddress().getHostString()));
+        if (result.getInt("status") == 1) {
+            return result.getInt("nextvote");
+        } else {
+            return -1;
+        }
+    }
+```
+
 
 If the IP in question has already voted on your website, you have to return the time in seconds left before the next vote.
 
