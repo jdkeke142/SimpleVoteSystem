@@ -39,6 +39,12 @@ You need to add a class in the websites package that extends from the AbstractHa
 
 ```java 
 public abstract int hasVoted(ProxiedPlayer player);
+
+public abstract String getWebsiteName();
+
+public abstract String getUserFriendlyName();
+
+public abstract String getUrl(String serverId, String playerIp);
 ```
 
 The important thing to remember that you have to implement is the hasVoted abstract method, it's really simple, it should typically look like this if your API is ideal for the system:
