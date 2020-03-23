@@ -1,0 +1,33 @@
+useCleaner: true
+database:
+  host: localhost
+  port: 3306
+  database: db
+  username: user
+  password: passw
+rewards:
+  1:
+    - 'alert %playerName% voted on %websiteName%'
+  2:
+    - 'alert %playerName% voted on %websiteName%, chain of 2 votes'
+  3:
+    - 'alert %playerName% voted on %websiteName%, chain of 3 votes'
+websites:
+  serveur_PriveNet:
+    enabled: true
+    votePage: 'https://serveur-prive.net/minecraft/ivernya-3422'
+    serverId: '5GHP0copFW7AlCi'
+  serveurs_MinecraftOrg:
+    enabled: true
+    votePage: 'https://www.serveurs-minecraft.org/vote.php?id=58214'
+    serverId: '58214'
+  serveursMinecraftOrg:
+    enabled: true
+    votePage: 'https://www.serveursminecraft.org/serveur/4115/'
+    serverId: '4115'
+  liste_Serveurs_MinecraftOrg:
+    enabled: true
+    votePage: 'https://www.liste-serveurs-minecraft.org/serveur-minecraft/ivernya-semi-rp-1-15-2/'
+    serverId: '199337'
+#For God's sake, don't change the value below manually.
+votesCleaned: false
