@@ -42,7 +42,8 @@ There are 3 particular values:
 
 ##### Then you are good to go.
 
-#### Now maybe you are wondering what is the useCleaner key in configuration, it allows your server, if set to true, to clean all the vote counters every first day of a new month.
+#### The votes cleaner
+Now maybe you are wondering what is the useCleaner key in configuration, it allows your server, if set to true, to clean all the vote counters every first day of a new month.
 
 ## As a vote website owner, how can I add my website?
 You need to add a class in the websites package that extends from the AbstractHasVoted abstract class, it contains the following abstract methods which you will have to implement:
