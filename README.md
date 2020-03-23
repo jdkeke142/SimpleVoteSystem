@@ -35,7 +35,11 @@ There are 3 particular values:
 ##### Then you are good to go.
 
 ## As a vote website owner, how can I add my website?
-You need to add a class in the websites package that extends from the AbstractHasVoted abstract class.
+You need to add a class in the websites package that extends from the AbstractHasVoted abstract class, it contains the following abstract methods:
+
+```java 
+public abstract int hasVoted(ProxiedPlayer player);
+```
 
 The important thing to remember that you have to implement is the hasVoted abstract method, it's really simple, it should typically look like this if your API is ideal for the system:
 
