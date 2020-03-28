@@ -15,7 +15,7 @@ rewards:
 websites:
   serveur_PriveNet:
     enabled: true
-    votePage: 'https://serveur-prive.net/minecraft/ivernya-3422'
+    votePage: 'https://serveur-prive.net/minecraft/ivernya-3422/vote'
     serverId: '5GHP0copFW7AlCi'
   serveurs_MinecraftOrg:
     enabled: true
@@ -29,5 +29,9 @@ websites:
     enabled: true
     votePage: 'https://www.liste-serveurs-minecraft.org/serveur-minecraft/ivernya-semi-rp-1-15-2/'
     serverId: '199337'
+  liste_ServeursFr:
+    enabled: true
+    votePage: 'https://www.liste-serveurs.fr/server-ivernya.110/vote'
+    serverId: 'server-ivernya.110'
 #For God's sake, don't change the value below manually.
 votesCleaned: false

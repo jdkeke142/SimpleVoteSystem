@@ -7,10 +7,7 @@ import fr.keke142.simplevotesystem.managers.MessageManager;
 import fr.keke142.simplevotesystem.managers.VotesManager;
 import fr.keke142.simplevotesystem.tasks.VoteCheckerTask;
 import fr.keke142.simplevotesystem.tasks.VoteCleanerTask;
-import fr.keke142.simplevotesystem.websites.Liste_Serveurs_MinecraftOrgHasVoted;
-import fr.keke142.simplevotesystem.websites.Serveur_PriveNetHasVoted;
-import fr.keke142.simplevotesystem.websites.ServeursMinecraftOrgHasVoted;
-import fr.keke142.simplevotesystem.websites.Serveurs_MinecraftOrgHasVoted;
+import fr.keke142.simplevotesystem.websites.*;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
 
@@ -55,6 +52,7 @@ public class SimpleVoteSystemPlugin extends Plugin implements Listener {
             websites.add(new ServeursMinecraftOrgHasVoted());
             websites.add(new Serveur_PriveNetHasVoted());
             websites.add(new Liste_Serveurs_MinecraftOrgHasVoted());
+            websites.add(new Liste_ServeursFrHasVoted());
 
             getProxy().getPluginManager().registerCommand(this, new VoteCommand(this));
             this.getProxy().getPluginManager().registerListener(this, this);
