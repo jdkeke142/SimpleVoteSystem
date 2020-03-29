@@ -5,8 +5,6 @@ import fr.keke142.simplevotesystem.utils.ReadersUtil;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import org.json.JSONObject;
 
-import java.util.Date;
-
 public class Liste_ServeursFrHasVoted extends AbstractHasVoted {
     @Override
     public int hasVoted(ProxiedPlayer player) {
@@ -14,8 +12,7 @@ public class Liste_ServeursFrHasVoted extends AbstractHasVoted {
         if (result.getBoolean("success")) {
             int nextVoteTimestamp = result.getInt("prochainVote");
 
-            long currentDateTime = new Date().getTime();
-
+            long currentDateTime = System.currentTimeMillis() / 1000;
             return (int) (nextVoteTimestamp - currentDateTime);
         } else {
             return -1;
@@ -29,7 +26,7 @@ public class Liste_ServeursFrHasVoted extends AbstractHasVoted {
 
     @Override
     public String getWebsiteName() {
-        return "Liste_ServeursFr";
+        return "liste_ServeursFr";
     }
 
     @Override

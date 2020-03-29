@@ -32,6 +32,6 @@ websites:
   liste_ServeursFr:
     enabled: true
     votePage: 'https://www.liste-serveurs.fr/server-ivernya.110/vote'
-    serverId: 'server-ivernya.110'
+    serverId: '110'
 #For God's sake, don't change the value below manually.
 votesCleaned: false
