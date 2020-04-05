@@ -1,6 +1,8 @@
 package fr.keke142.simplevotesystem;
 
 import fr.keke142.simplevotesystem.commands.VoteCommand;
+import fr.keke142.simplevotesystem.commands.VoteTopCommand;
+import fr.keke142.simplevotesystem.listeners.NamesListener;
 import fr.keke142.simplevotesystem.managers.ConfigManager;
 import fr.keke142.simplevotesystem.managers.DatabaseManager;
 import fr.keke142.simplevotesystem.managers.MessageManager;
@@ -8,7 +10,6 @@ import fr.keke142.simplevotesystem.managers.VotesManager;
 import fr.keke142.simplevotesystem.tasks.VoteCheckerTask;
 import fr.keke142.simplevotesystem.tasks.VoteCleanerTask;
 import fr.keke142.simplevotesystem.websites.*;
-import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
 
 import java.io.*;
@@ -20,7 +21,7 @@ import java.util.jar.JarFile;
 import java.util.logging.Level;
 import java.util.zip.ZipEntry;
 
-public class SimpleVoteSystemPlugin extends Plugin implements Listener {
+public class SimpleVoteSystemPlugin extends Plugin {
     private static SimpleVoteSystemPlugin instance;
 
     private ConfigManager configManager;
@@ -55,7 +56,8 @@ public class SimpleVoteSystemPlugin extends Plugin implements Listener {
             websites.add(new Liste_ServeursFrHasVoted());
 
             getProxy().getPluginManager().registerCommand(this, new VoteCommand(this));
-            this.getProxy().getPluginManager().registerListener(this, this);
+            getProxy().getPluginManager().registerCommand(this, new VoteTopCommand(this));
+            this.getProxy().getPluginManager().registerListener(this, new NamesListener(this));
 
             this.getProxy().getScheduler().schedule(this, new VoteCheckerTask(this), 1L, 1L, TimeUnit.SECONDS);
 

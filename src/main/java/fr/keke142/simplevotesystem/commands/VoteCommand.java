@@ -63,7 +63,8 @@ public class VoteCommand extends Command {
 
                 p.sendMessage(ComponentSerializer.parse(message));
             }
-
         }
+
+        ChatUtil.sendCenteredMessage(p, MessageManager.msg("commands.vote.footer"));
     }
 }

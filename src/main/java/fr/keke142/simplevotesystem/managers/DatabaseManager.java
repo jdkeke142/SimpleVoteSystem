@@ -3,12 +3,14 @@ package fr.keke142.simplevotesystem.managers;
 import com.zaxxer.hikari.HikariDataSource;
 import fr.keke142.simplevotesystem.SimpleVoteSystemPlugin;
 import fr.keke142.simplevotesystem.database.VotesCountsTable;
+import fr.keke142.simplevotesystem.database.VotesNamesTable;
 import fr.keke142.simplevotesystem.database.VotesTable;
 
 public class DatabaseManager {
     private SimpleVoteSystemPlugin plugin;
     private VotesTable votesTable;
     private VotesCountsTable votesCountsTable;
+    private VotesNamesTable votesNamesTable;
 
     private HikariDataSource hikari;
 
@@ -30,6 +32,9 @@ public class DatabaseManager {
 
         votesCountsTable = new VotesCountsTable(this);
         votesCountsTable.createTable();
+
+        votesNamesTable = new VotesNamesTable(this);
+        votesNamesTable.createTable();
     }
 
     public HikariDataSource getHikari() {
@@ -42,5 +47,9 @@ public class DatabaseManager {
 
     public VotesCountsTable getVotesCountsTable() {
         return votesCountsTable;
+    }
+
+    public VotesNamesTable getVotesNamesTable() {
+        return votesNamesTable;
     }
 }

@@ -6,9 +6,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedHashMap;
 
 public class VotesCountsTable extends AbstractTable {
     private static final String GET_COUNTS = "SELECT votesCounts FROM ivv_counts WHERE votePlayer=?";
+    private static final String GET_ALL_COUNTS = "SELECT * FROM ivv_counts ORDER BY votesCounts DESC";
     private static final String INCREMENT_COUNTS = "INSERT INTO ivv_counts (votePlayer, votesCounts) VALUES(?, ?) ON DUPLICATE KEY UPDATE votesCounts=votesCounts+1";
     private static final String RESET_ALL_COUNTS = "TRUNCATE TABLE ivv_counts";
 
@@ -55,6 +57,25 @@ public class VotesCountsTable extends AbstractTable {
         }
 
         return 0;
+    }
+
+    public LinkedHashMap<String, Integer> getAllCounts() {
+        try (Connection connection = getDatabaseManager().getHikari().getConnection();
+             PreparedStatement getAllCounts = connection.prepareStatement(GET_ALL_COUNTS)) {
+
+            ResultSet res = getAllCounts.executeQuery();
+
+            LinkedHashMap<String, Integer> counts = new LinkedHashMap<>();
+            while (res.next()) {
+                counts.put(res.getString(1), res.getInt(2));
+            }
+
+            return counts;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     @Override

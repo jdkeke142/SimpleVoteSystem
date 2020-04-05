@@ -2,10 +2,12 @@ package fr.keke142.simplevotesystem.managers;
 
 import fr.keke142.simplevotesystem.SimpleVoteSystemPlugin;
 import fr.keke142.simplevotesystem.objects.Vote;
+import fr.keke142.simplevotesystem.utils.MapUtil;
 import fr.keke142.simplevotesystem.utils.NumbersUtil;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 import java.util.Date;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,6 +44,20 @@ public class VotesManager {
 
     public int getCounts(String playerUuid) {
         return plugin.getDatabaseManager().getVotesCountsTable().getCounts(playerUuid);
+    }
+
+    public Map<String, Integer> getTopVoters(int amount, int offset) {
+        LinkedHashMap<String, Integer> uuidVotes = plugin.getDatabaseManager().getVotesCountsTable().getAllCounts();
+
+        return MapUtil.skipAndTake(uuidVotes, offset, amount);
+    }
+
+    public void addOrUpdateName(ProxiedPlayer player) {
+        plugin.getDatabaseManager().getVotesNamesTable().addOrUpdateName(player.getUniqueId().toString(), player.getName());
+    }
+
+    public String getNameFromUuid(String votePlayer) {
+        return plugin.getDatabaseManager().getVotesNamesTable().getNameFromUuid(votePlayer);
     }
 
     public void resetAllCounts() {
