@@ -10,6 +10,7 @@ This plugin is a voting plugin designed to be put on a BungeeCord server, its pu
 - https://www.serveursminecraft.org/
 - https://www.liste-serveurs-minecraft.org/
 - www.liste-serveurs.fr
+- https://www.liste-serveur.fr/
 
 ## As a server owner, how can I install the plugin on my server?
 
