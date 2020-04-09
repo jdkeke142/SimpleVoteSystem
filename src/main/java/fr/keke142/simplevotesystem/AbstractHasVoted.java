@@ -42,7 +42,7 @@ public abstract class AbstractHasVoted {
                         handleVote(player);
                     }
                 }
-            }, 0, 3, TimeUnit.SECONDS);
+            }, 0, 1, TimeUnit.SECONDS);
 
         } catch (IOException e) {
             SimpleVoteSystemPlugin.getInstance().getLogger().log(Level.SEVERE, "Failed to load configuration", e);

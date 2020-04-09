@@ -33,5 +33,9 @@ websites:
     enabled: true
     votePage: 'https://www.liste-serveurs.fr/server-ivernya.110/vote'
     serverId: '110'
+  liste_ServeurFr:
+    enabled: true
+    votePage: 'https://www.liste-serveur.fr/serveurs/minecraft/myserver-0000'
+    serverId: '358bf0af9415554f7c32426f405c7b7f'
 #For God's sake, don't change the value below manually.
 votesCleaned: false

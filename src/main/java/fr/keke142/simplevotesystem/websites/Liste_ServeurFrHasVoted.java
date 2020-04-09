@@ -13,7 +13,7 @@ public class Liste_ServeurFrHasVoted extends AbstractHasVoted {
     @Override
     public int hasVoted(ProxiedPlayer player) {
         JSONObject result = ReadersUtil.readJsonFromUrl(getUrl(getServerIdForWebsite(), player.getAddress().getHostString()));
-        if (result.getBoolean("hasVoted") == true) {
+        if (result.getBoolean("hasVoted")) {
             return result.getInt("nextVote");
         } else {
             return -1;

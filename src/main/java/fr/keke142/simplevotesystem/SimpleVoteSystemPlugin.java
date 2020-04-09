@@ -54,6 +54,7 @@ public class SimpleVoteSystemPlugin extends Plugin {
             websites.add(new Serveur_PriveNetHasVoted());
             websites.add(new Liste_Serveurs_MinecraftOrgHasVoted());
             websites.add(new Liste_ServeursFrHasVoted());
+            websites.add(new Liste_ServeurFrHasVoted());
 
             getProxy().getPluginManager().registerCommand(this, new VoteCommand(this));
             getProxy().getPluginManager().registerCommand(this, new VoteTopCommand(this));
