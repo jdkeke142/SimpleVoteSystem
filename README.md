@@ -107,3 +107,5 @@ The important thing to remember that you have to implement is the hasVoted abstr
 If the IP in question has already voted on your website, you have to return the time in seconds left before the next vote.
 
 If you don't detect any vote on that IP, then return -1.
+
+Then don't forget to register your site in the onEnable method like the other websites, as well as to add it in the configuration file
