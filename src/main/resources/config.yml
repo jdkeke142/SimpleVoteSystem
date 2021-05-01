@@ -37,5 +37,14 @@ websites:
     enabled: true
     votePage: 'https://www.liste-serveur.fr/serveurs/minecraft/myserver-0000'
     serverId: '358bf0af9415554f7c32426f405c7b7f'
+  serveur_MinecraftCom:
+    enabled: true
+    votePage: 'https://serveur-minecraft.com/2532'
+    serverId: '2532'
+  top_ServeursNet:
+    enabled: true
+    votePage: 'https://top-serveurs.net/minecraft/vote/dynastia'
+    serverId: '11PQ8E54A8'
+
 #For God's sake, don't change the value below manually.
 votesCleaned: false
