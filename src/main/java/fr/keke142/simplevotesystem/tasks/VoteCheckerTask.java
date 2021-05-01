@@ -25,7 +25,6 @@ public class VoteCheckerTask implements Runnable {
                 String votePlayer = vote.getVotePlayer();
 
                 votesManager.removeVote(vote.getVoteWebsite(), votePlayer);
-                plugin.getLogger().info("I REMOVED VOTE ON " + vote.getVoteWebsite() + " for " + votePlayer);
             }
         }
     }
