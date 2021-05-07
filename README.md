@@ -3,8 +3,9 @@
 This plugin is a voting plugin designed to be put on a BungeeCord server, its purpose is to provide compatibility for voting sites, which do not support votifier.
 
 
-## What voting sites are currently supported?
+## Which voting sites are currently supported?
 
+- https://serveur-minecraft.com/
 - https://serveur-prive.net/
 - https://www.serveurs-minecraft.org/
 - https://www.serveursminecraft.org/
